@@ -514,18 +514,6 @@ Private Property Get IPutPay_ViewPercentage() As Boolean
     IPutPay_ViewPercentage = True
 End Property
 
-Private Function GetFormatValue(D As Double) As String
-
-    ' se c'è il punto o la virgola li toglie
-    If InStr(D, ".") > 0 Then ' toglie il punto
-        GetFormatValue = Replace(Format(D, "0000000.00000"), ".", "")
-    ElseIf InStr(D, ",") > 0 Then ' toglie la virgola
-        GetFormatValue = Replace(Format(D, "0000000.00000"), ",", "")
-    Else
-        GetFormatValue = Format(D, "0000000") & "00000"
-    End If
-
-End Function
 
 Private Function GetNavisionLayout(navisionLayout As Layout) As String
 
