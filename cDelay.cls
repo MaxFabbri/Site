@@ -144,7 +144,7 @@ Dim delayMinutes                    As Integer
                         For Each mark In .marks
                             ' ok la fascia è coperta ma la marcatura deve essere all'interno della fascia
                             If .IsMarkInRange(mark, slotCover.DaOra, slotCover.AOra) Then
-                                ' abbiamo il lavorato all'interno della fascia
+                                ' trova la fascia di assenza 
                                 calcSlot.CheckSlot delaySlot, slotCover.DaOra, slotCover.AOra, slot.Causale
                             End If
                         Next
