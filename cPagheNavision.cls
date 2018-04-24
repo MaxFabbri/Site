@@ -334,7 +334,7 @@ Private Sub IPutPay_MakeSectionsKeys()
     Set oS = oSects.Add("Parametri")
     oS.AddKey "Codice Persona In Paga", StringText, "Inserire il codice che identifica la persona alle paghe"
     oS.AddKey "Elenco Causali In Paga", ListPayCode, "Codici da passare in paga"
-    oS.AddKey "Formato Orario In Sessagesimi", StringText, "Inserire il formato orario solo se in sessagesimi es: hh:nn"
+    oS.AddKey "Formato Orario In Sessagesimi", StringText, "Inserire il formato orario solo se in sessagesimi come il punto . o i due punti : es: hh:nn"
     oS.AddKey "Preleva Valore In Sessagesimi", ComboBox, "Preleva solamente il valore eliminando gli zeri non significativi", "0,1", "No,Sì"
     oS.AddKey "Formato Data", StringText, "Inserire obbligatoriamente il formato della data es: dd/MM/yyyy"
 
@@ -476,6 +476,8 @@ Private Function IPutPay_ViewFullCalendar(StartDate As Date, EndDate As Date, By
         .NumberFileOutPut = 1
         .FileName(1) = "Nome file paghe"
         .Fullmonth = True
+        .DynamicPeriod = True
+        .FilterOutPutFile = "File CVS (*.CSV;*.*)|*.CSV;*.*"
     End With
     
     Set IPutPay_ViewFullCalendar = oC.Run()
